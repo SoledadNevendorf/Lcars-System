@@ -1,0 +1,297 @@
+/* FONTS */
+/* oswald */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+/* nunito */
+  @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;800&display=swap');
+
+  /* COLORS */
+:root {
+--black: #000000;
+--white: #fff;
+--white-50:rgba(255,255,255,0.5);
+--dark: #212121;
+--lightBlue: #9bbde4;
+--lightBlue2: #9898cc;
+--lightBlue3: #9999ff;
+--orange: #f8981d;
+--cream: #fdcc99;
+--lightYellow: #ffcf63;
+--lightPurple: #c1a4cd;
+--pink: #ce6667;
+
+--bg-gradient: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(20,20,83,1) 100%);
+--bg-pale-white: rgba(255,255,255, 0.1);
+--bg-lightBlue-gradient:linear-gradient(135deg, var(--lightBlue3) 100%, rgba(255,255,255,0) 0%);
+
+--transition: all 0.3s ease;
+--light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+--dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* -------------------------------- */
+/* GENERAL ------------------------ */
+/* -------------------------------- */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald';
+    font-size: 16px;
+}
+
+body{
+  background-color: var(--black) !important;
+}
+
+h1,h2,h3,h4,h5,h6{
+    text-transform: uppercase;
+    font-weight: 400 !important;
+    margin: 0 !important;
+}
+p{
+    margin: 0 !important;
+}
+
+.btn{
+    text-transform: uppercase;
+    text-align: end !important;
+    width: 100%;
+    border-radius: 25px !important;
+    padding: 1em .5em .25em 2em !important;
+
+}
+
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active, .btn:disabled{
+    border: none !important;
+}
+
+.btn:hover{
+    color: var(--white) !important;
+}
+
+.btn-pagination{
+    color: var(--white) !important;
+}
+
+.btn-pagination:hover{
+    color: var(--lightPurple) !important;
+}
+
+.btn-pagination:disabled{
+    color: rgba(255, 255, 255, .7);
+}
+
+button[type=submit], .clear-btn{
+  margin-left: .5em;
+  padding: .25em 1em;
+  text-transform: uppercase;
+
+}
+
+button.edit-btn{
+  background-color: transparent !important;
+  border: none;
+  padding: 5px;
+}
+
+input{
+  background-color: transparent !important;
+  border: 0px 0px 1px 0px solid var(--white);
+}
+
+
+
+.app.active{
+    display: block;
+  }
+
+  .bottom{
+    bottom: 0;
+  }
+
+/* -------------------------------- */
+/* BACKGROUND COLORS -------------- */
+/* -------------------------------- */
+
+.bg-black{
+    height: 100vh;
+    background-color: var(--black)
+}
+.black{color: var(--black)}
+
+.white{color: var(--white)}
+
+.bg-lightBlue{background-color: var(--lightBlue) !important}
+.lightBlue{color: var(--lightBlue)}
+
+.bg-lightBlue2{background-color: var(--lightBlue2) !important}
+.lightBlue2{color: var(--lightBlue2)}
+
+.bg-lightBlue3{background-color: var(--lightBlue3) !important}
+.lightBlue3{color: var(--lightBlue3)}
+
+.bg-orange{background-color: var(--orange) !important}
+.orange{color: var(--orange)}
+
+.bg-cream{background-color:var(--cream) !important}
+.cream{color: var(--cream)}
+
+.bg-lightYellow{background-color: var(--lightYellow) !important}
+.lightYellow{color: var(--lightYellow)}
+
+.bg-lightPurple {background-color: var(--lightPurple) !important}
+.lightPurple{color: var(--lightPurple)}
+
+.bg-pink{background-color: var(--pink) !important}
+.pink{color: var(--pink)}
+
+/* ------------------------------- */
+/* ROUNDED BORDERS --------------- */
+/* ------------------------------- */
+
+.rounded-bottom-left{
+    border-bottom-left-radius: 25px;
+}
+.rounded-bottom-right{
+    border-bottom-right-radius: 25px;
+}
+
+.rounded-top-left{
+    border-top-left-radius: 25px;
+}
+.rounded-top-right{
+    border-top-right-radius: 25px;
+}
+
+.rounded-left{
+    border-radius: 25px 0px 0px 25px;
+}
+
+.rounded-right{
+    border-radius: 0px 25px 25px 0px;
+}
+
+.rounded-all{
+    border-radius: 25px;
+}
+
+/* ------------------------------- */
+/* HEADER ------------------------ */
+/* ------------------------------- */
+
+.flipNumber {
+    font-weight: 400;
+    opacity: 1; 
+    transition: opacity;
+}
+  
+.flipNumber.hidden {
+opacity: 0; /* Final opacity */
+}
+
+/*
+=============== 
+Modal
+===============
+*/
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    transition: var(--transition);
+    visibility: hidden;
+    z-index: -1;
+    backdrop-filter: blur(3px);
+  }
+  
+  /* OPEN/CLOSE MODAL */
+  .show-modal {
+    visibility: visible;
+    z-index: 999;
+  }
+  .modal-container {
+    text-align: center;
+    position: relative;
+    color: var(--lightBlue);
+  }
+  
+  .close-modal-btn {
+    font-size: 2rem;
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+  }
+
+  /* --------------------- */
+  /* ACCORDION------------ */
+  /* --------------------- */
+
+  .accordion{
+    background-color: transparent !important;
+    border: 0px !important;
+    --bs-accordion-border-color: transparent !important;
+    padding: 0;
+  }
+
+  .accordion-item{
+    border-width: 0px;
+    border-color: none;
+    background-color: transparent !important;
+  }
+
+  .accordion-button:focus{
+    border: none !important;
+    box-shadow: none !important  }
+
+  .accordion-button:not(.collapsed){
+    color: var(--black) !important;
+  }
+
+  .accordion-button{
+    background: transparent !important;
+    color: black;
+    text-transform: uppercase;
+  }
+
+  .accordion-header{
+    background-color: var(--pink);
+  }
+
+  .accordion-body{
+    padding: 0 !important;
+  }
+
+  .accordion li button{
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-right: .25em;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    background-color: var(--orange);
+    width: 100%;
+    text-transform: uppercase;
+    text-align: end;
+    border: none;
+  }
+
+.form-control{
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.social-link{
+  background-color: var(--lightBlue);
+  padding: .5em .75em;
+  border-radius: 25px;
+  color: var(--black);
+}
+
+.data-error{
+  position: absolute;
+  bottom: 0;
+  right: 2em;
+}
